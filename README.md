@@ -14,7 +14,7 @@ For creating all the ecosystem of this app, the rest api was created with:
 **vuex,** can disposal all data & methods (control) in a global way for using during all de application.
 **axios,** create methods for consuming data from rest api.
 
-Mixing vuex&axios we can create a special file for using all the apiMethods. You can find all the methods in tthe route **../store/apiMethods.js**
+Mixing vuex&axios we can create a special file for using all the apiMethods. You can find all the methods in the branch vue.js / route **../store/apiMethods.js**
 
 As the same time you can find the global use of the data and methods of the "Store" by using different components in one single view.
 
