@@ -11,6 +11,17 @@ const path = require('path');
 
 const app = express();
 
+// CONEXIÓN MONGODB
+const mongoose = require('mongoose');
+const dbName = 'mevn-notes';
+const uri = `mongodb+srv://sergioges:Gonzaloges_1804@vuejs-grmww.mongodb.net/${dbName}?retryWrites=true&w=majority`;
+const options = {useUnifiedTopology: true, useNewUrlParser: true}
+mongoose.connect(uri, options).then(
+  () => {
+    console.log('Conectado a MongoDB')},
+  err => {err}
+);
+
 // MIDDLEWARES
 app.use(morgan('tiny'));
 app.use(cors());
@@ -21,6 +32,7 @@ app.use(express.urlencoded({ extended: true }));
 // app.get('/', function(req, res) {
   //  res.send('Hello world');
 // });
+app.use('/api', require('./routes/note'));
 
 // Middleware para Vue.js router modo history
 // npm install --save connect-history-api-fallback
